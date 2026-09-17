@@ -26,10 +26,101 @@ function App(){
  const place=()=>{const q=Math.max(1,Number(qty)||1); if(side==='buy'&&value>cash){setModal('insufficient');return} setCash(c=>side==='buy'?c-value:c+value);setOrders(o=>[{id:Date.now(),symbol:selected.symbol,side,qty:q,price,status:'Executed',type:orderType,time:new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})},...o]);setModal('success')};
  const toggleWatch=()=>setWatch(w=>w.includes(selected.symbol)?w.filter(x=>x!==selected.symbol):[...w,selected.symbol]);
  return <div className="shell">
-  <header className="top"><div className="brand"><div className="brandmark"><Activity size={20}/></div><b>Pulse<span>Trade</span></b></div><div className="market"><i/> NSE <strong>25,184.30</strong><span>+0.72%</span></div><div className="global-search"><Search size={16}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search stocks, ETFs, indices..."/><kbd>⌘ K</kbd></div><div className="top-right"><button className="icon" title="Notifications"><Bell size={18}/><em/></button><button className="avatar">AK</button><button className="mobile-menu icon" onClick={()=>setMobile(!mobile)}>{mobile?<X/>:<Menu/>}</button></div></header>
-  <aside className={mobile?'nav open':'nav'}><div className="nav-label">WORKSPACE</div>{[[Home,'Overview','home'],[BarChart3,'Markets','markets'],[Briefcase,'Portfolio','portfolio'],[History,'Orders','orders'],[Wallet,'Funds','funds']].map(([I,l,v])=><button className={view===v?'active':''} onClick={()=>{setView(v);setMobile(false)}} key={v}><I size={18}/>{l}</button>)}<div className="nav-label spaced">TOOLS</div><button><Star size={18}/>Watchlist</button><button><BookOpen size={18}/>Research</button><button><Settings size={18}/>Settings</button><div className="nav-bottom"><div className="demo"><ShieldCheck size={16}/><div><b>Demo account</b><small>Paper trading enabled</small></div></div><button><LogOut size={17}/>Sign out</button></div></aside>
+  <header className="top"><div className="brand">
+  <div className="brandmark">☾</div>
+
+  <div className="brand-copy">
+    <b>DEEN E HAQQ</b>
+    <span>TRADE</span>
+  </div>
+</div><div className="market"><i/> NSE <strong>25,184.30</strong><span>+0.72%</span></div><div className="global-search"><Search size={16}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search stocks, ETFs, indices..."/><kbd>⌘ K</kbd></div><div className="top-right"><button className="icon" title="Notifications"><Bell size={18}/><em/></button><button className="avatar">AK</button><button className="mobile-menu icon" onClick={()=>setMobile(!mobile)}>{mobile?<X/>:<Menu/>}</button></div></header>
+  <aside className={mobile?'nav open':'nav'}><div className="nav-label">WORKSPACE</div>{[[Home,'Overview','home'],[BarChart3,'Markets','markets'],[Briefcase,'Portfolio','portfolio'],[History,'Orders','orders'],[Wallet,'Funds','funds']].map(([I,l,v])=><button className={view===v?'active':''} onClick={()=>{setView(v);setMobile(false)}} key={v}><I size={18}/>{l}</button>)}<div className="nav-label spaced">TOOLS</div><button><Star size={18}/>Watchlist</button><button><BookOpen size={18}/>Research</button><button><Settings size={18}/>Settings</button><div className="nav-bottom"><div className="demo amanah-account">
+
+  <div className="amanah-icon">
+    ☾
+  </div>
+
+  <div>
+    <b>Amanah account</b>
+    <small>Paper trading · Shariah-aware</small>
+  </div>
+
+</div><button><LogOut size={17}/>Sign out</button></div></aside>
   <main className="main">
-   {view==='home'&&<><section className="welcome"><div><p className="overline">THURSDAY · 10 SEP 2026</p><h1>Good afternoon, Adnan.</h1><p>Markets are moving. Here's your trading cockpit.</p></div><button className="fund" onClick={()=>setModal('funds')}><Plus size={17}/> Add money</button></section>
+   {view==='home'&&<><section className="welcome islamic-welcome">
+
+  <div className="welcome-content">
+
+    <div className="islamic-kicker">
+      <span>☾</span>
+      SHARIAH-AWARE TRADING
+    </div>
+
+    <p className="overline">
+      THURSDAY · 10 SEP 2026
+    </p>
+
+    <h1>
+      Trade with integrity.
+      <br />
+      <span>Invest with purpose.</span>
+    </h1>
+
+    <p className="welcome-description">
+      A trading experience built around discipline,
+      transparency and Amanah.
+    </p>
+
+    <div className="islamic-principles">
+
+      <span>
+        <i>✦</i>
+        Transparency
+      </span>
+
+      <span>
+        <i>✦</i>
+        Responsible investing
+      </span>
+
+      <span>
+        <i>✦</i>
+        Shariah-aware
+      </span>
+
+    </div>
+
+  </div>
+
+  <div className="islamic-hero-art">
+
+    <div className="hero-moon">☾</div>
+
+    <div className="hero-mosque">
+      <div className="dome"></div>
+      <div className="minaret left"></div>
+      <div className="minaret right"></div>
+
+      <div className="mosque-body">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div className="hero-glow"></div>
+
+  </div>
+
+  <button
+    className="fund"
+    onClick={()=>setModal('funds')}
+  >
+    <Plus size={17}/>
+    Add money
+  </button>
+
+</section>
    <section className="metric-grid"><Metric label="Total portfolio" value={showBalance?'₹8,42,680':'•••••••'} delta="+₹14,280.40" pct="+1.72%" up icon={<Briefcase/>}/><Metric label="Available cash" value={showBalance?`₹${fmt(cash)}`:'•••••••'} delta="Ready to trade" icon={<Wallet/>}/><Metric label="Today's P&L" value="+₹6,482.25" delta="vs yesterday" pct="+0.77%" up icon={<TrendingUp/>}/><Metric label="Invested" value="₹7,17,540" delta="85.1% allocated" icon={<Activity/>}/></section>
    <div className="content-grid"><section className="card chart-card"><div className="card-head"><div><p className="overline">MARKET</p><div className="instrument"><div className="asset-logo">{selected.symbol.slice(0,1)}</div><div><h2>{selected.symbol} <small>NSE</small></h2><p>{selected.name}</p></div></div></div><div className="quote"><b>₹{fmt(selected.price)}</b><span className={selected.change>=0?'positive':'negative'}>{selected.change>=0?'+':''}{selected.change}%</span><button className={watch.includes(selected.symbol)?'watch-btn on':'watch-btn'} onClick={toggleWatch}><Star size={17} fill={watch.includes(selected.symbol)?'currentColor':'none'}/></button></div></div><div className="chart-toolbar"><div>{['1D','1W','1M','3M','1Y','5Y'].map(x=><button className={timeframe===x?'chosen':''} onClick={()=>setTimeframe(x)} key={x}>{x}</button>)}</div><button className="compare"><Activity size={14}/> Compare</button></div><div className="chart"><ResponsiveContainer><AreaChart data={candles}><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopOpacity=".35"/><stop offset="1" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="t" hide/><YAxis hide domain={['dataMin - 5','dataMax + 5']}/><Tooltip contentStyle={{background:'#121925',border:'1px solid #263246',borderRadius:10,color:'#fff'}} formatter={(v)=>[`₹${v.toFixed(2)}`,'Price']}/><Area type="monotone" dataKey="value" strokeWidth={2.5} fill="url(#fill)" stroke="currentColor"/></AreaChart></ResponsiveContainer></div><div className="chart-meta"><span>09:15</span><span>11:00</span><span>13:00</span><span>15:30</span></div><div className="ohlc"><span>Open <b>₹2,911.20</b></span><span>High <b>₹2,956.80</b></span><span>Low <b>₹2,904.10</b></span><span>Prev. close <b>₹2,885.35</b></span></div></section>
    <section className="card watch-card"><div className="card-head"><div><p className="overline">WATCHLIST</p><h2>Market movers</h2></div><button className="ghost">Edit</button></div><div className="tabs"><button className="tab active">All</button><button className="tab">Gainers</button><button className="tab">Losers</button></div>{assets.slice(0,7).map(a=><button className={selected.symbol===a.symbol?'watch-row selected':'watch-row'} onClick={()=>{setSelected(a);setLimit(a.price)}} key={a.symbol}><div className="mini-logo">{a.symbol[0]}</div><div className="watch-name"><b>{a.symbol}</b><small>{a.name}</small></div><div className="watch-price"><b>₹{fmt(a.price)}</b><span className={a.change>=0?'positive':'negative'}>{a.change>=0?'+':''}{a.change}%</span></div><ChevronDown size={14} className="chev"/></button>)}</section></div>

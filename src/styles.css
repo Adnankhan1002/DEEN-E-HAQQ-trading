@@ -23,3 +23,997 @@
 .remove-proof{border:0;background:none;color:#e77b87;font-size:8px;cursor:pointer}
 .proof-status{margin-top:8px;font-size:8px;color:var(--accent);line-height:1.4}
 @media(max-width:600px){.proof-head{align-items:stretch;flex-direction:column}.upload-proof{width:100%}}
+/* ================================
+   DEEN E HAQQ TRADE - Islamic Theme
+   ================================ */
+
+:root {
+  --islamic-emerald: #1f9d68;
+  --islamic-gold: #d8b56a;
+  --islamic-deep: #07130f;
+}
+
+/* Islamic ambient background */
+body {
+  background:
+    radial-gradient(
+      circle at 82% -8%,
+      rgba(31, 157, 104, 0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 8% 92%,
+      rgba(216, 181, 106, 0.07),
+      transparent 30%
+    ),
+    #070b11;
+}
+
+/* Brand */
+.brand {
+  position: relative;
+  z-index: 2;
+  min-width: 245px;
+}
+
+.brand > b {
+  display: block;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  color: #f5f7fb;
+}
+
+.brand > b span {
+  color: var(--islamic-gold);
+}
+
+/* Crescent brand mark */
+.brandmark {
+  background: linear-gradient(
+    135deg,
+    var(--islamic-emerald),
+    #123c2c
+  ) !important;
+
+  border: 1px solid rgba(216, 181, 106, 0.55) !important;
+  color: var(--islamic-gold) !important;
+
+  font-size: 19px;
+}
+
+/* Subtle Islamic geometric pattern */
+.top {
+  position: relative;
+  overflow: hidden;
+}
+
+.top::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+
+  background-image:
+    linear-gradient(
+      30deg,
+      var(--islamic-gold) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--islamic-gold) 87.5%,
+      var(--islamic-gold)
+    ),
+    linear-gradient(
+      150deg,
+      var(--islamic-gold) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--islamic-gold) 87.5%,
+      var(--islamic-gold)
+    );
+
+  background-size: 28px 48px;
+  background-position: 0 0, 14px 24px;
+}
+
+/* Active navigation gets Islamic gold accent */
+.nav button.active {
+  box-shadow: inset 2px 0 var(--islamic-gold);
+}
+
+/* Islamic styling for cards */
+.card,
+.metric {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after,
+.metric::after {
+  content: "۞";
+
+  position: absolute;
+  right: -5px;
+  bottom: -18px;
+
+  font-size: 55px;
+  color: rgba(216, 181, 106, 0.035);
+
+  pointer-events: none;
+}
+
+/* Demo/Amanah account */
+.demo {
+  border-color: rgba(216, 181, 106, 0.16);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(31, 157, 104, 0.08),
+      rgba(216, 181, 106, 0.03)
+    );
+}
+
+/* Green funding button */
+.fund {
+  background: linear-gradient(
+    135deg,
+    #39e58c,
+    var(--islamic-emerald)
+  );
+}
+
+/* Shariah badge */
+.islamic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 10px;
+  padding: 6px 10px;
+
+  border: 1px solid rgba(216, 181, 106, 0.2);
+  border-radius: 999px;
+
+  background: rgba(31, 157, 104, 0.07);
+
+  color: var(--islamic-gold);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .brand {
+    min-width: auto;
+  }
+
+  .brand > b {
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   DEEN E HAQQ TRADE
+   ISLAMIC VISUAL EXPERIENCE
+   ===================================================== */
+
+:root {
+  --deen-emerald: #20b873;
+  --deen-emerald-dark: #0d3b2b;
+  --deen-gold: #d8b56a;
+  --deen-gold-light: #f0d58c;
+  --deen-black: #050b09;
+}
+
+
+/* =========================
+   GLOBAL ISLAMIC ATMOSPHERE
+   ========================= */
+
+body {
+  background:
+    radial-gradient(
+      circle at 78% -10%,
+      rgba(32, 184, 115, .14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 12% 80%,
+      rgba(216, 181, 106, .06),
+      transparent 25%
+    ),
+    #070b11;
+}
+
+
+/* =========================
+   TOP NAVIGATION
+   ========================= */
+
+.top {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5, 15, 11, .97),
+      rgba(7, 11, 17, .94)
+    );
+
+  border-bottom-color: rgba(216,181,106,.16);
+}
+
+
+/* subtle Islamic geometry */
+
+.top::after {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: .055;
+
+  background-image:
+
+    linear-gradient(
+      30deg,
+      var(--deen-gold) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--deen-gold) 87.5%
+    ),
+
+    linear-gradient(
+      150deg,
+      var(--deen-gold) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--deen-gold) 87.5%
+    );
+
+  background-size: 32px 56px;
+}
+
+
+/* =========================
+   BRAND
+   ========================= */
+
+.brand {
+  min-width: 245px;
+  position: relative;
+  z-index: 2;
+}
+
+.brandmark {
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 11px;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #35d995,
+      #0c593b
+    ) !important;
+
+  border: 1px solid
+    rgba(216,181,106,.55) !important;
+
+  color: var(--deen-gold-light) !important;
+
+  font-family: Georgia, serif;
+
+  font-size: 23px;
+}
+
+
+/* remove old PulseTrade styling */
+
+.brand > b {
+  display: none !important;
+}
+
+.brand-copy {
+
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+
+  font-family: Manrope;
+}
+
+.brand-copy b {
+
+  font-size: 16px;
+
+  letter-spacing: -.03em;
+
+  color: #f5f7fb;
+}
+
+.brand-copy span {
+
+  margin-top: 4px;
+
+  font-size: 9px;
+
+  letter-spacing: .22em;
+
+  color: var(--deen-gold);
+
+  font-weight: 800;
+}
+
+
+/* =========================
+   ISLAMIC WELCOME HERO
+   ========================= */
+
+.islamic-welcome {
+
+  min-height: 210px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 26px 30px;
+
+  border-radius: 16px;
+
+  border: 1px solid
+    rgba(216,181,106,.12);
+
+  background:
+
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(32,184,115,.18),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      120deg,
+      #0c1715,
+      #081019
+    );
+
+  margin-bottom: 18px;
+}
+
+
+/* large geometric background */
+
+.islamic-welcome::before {
+
+  content: "✦";
+
+  position: absolute;
+
+  right: 270px;
+  top: -90px;
+
+  font-size: 240px;
+
+  color: rgba(216,181,106,.025);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   HERO CONTENT
+   ========================= */
+
+.welcome-content {
+
+  position: relative;
+
+  z-index: 4;
+
+  max-width: 680px;
+}
+
+.islamic-kicker {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  border: 1px solid
+    rgba(216,181,106,.25);
+
+  background:
+    rgba(32,184,115,.06);
+
+  color: var(--deen-gold);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: .14em;
+
+  margin-bottom: 14px;
+}
+
+.islamic-kicker span {
+
+  font-family: Georgia;
+
+  font-size: 15px;
+
+  color: var(--deen-gold-light);
+}
+
+
+/* HERO HEADING */
+
+.islamic-welcome h1 {
+
+  font-size: 34px !important;
+
+  line-height: 1.1;
+
+  letter-spacing: -.045em;
+
+  margin: 4px 0 0 !important;
+}
+
+.islamic-welcome h1 span {
+
+  color: var(--deen-emerald);
+}
+
+
+/* HERO DESCRIPTION */
+
+.welcome-description {
+
+  color: #8e9aaa !important;
+
+  max-width: 520px;
+
+  line-height: 1.6;
+
+  margin-top: 10px !important;
+}
+
+
+/* =========================
+   PRINCIPLES
+   ========================= */
+
+.islamic-principles {
+
+  display: flex;
+
+  gap: 18px;
+
+  margin-top: 14px;
+}
+
+.islamic-principles span {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #7f8b9e;
+
+  font-size: 9px;
+}
+
+.islamic-principles i {
+
+  font-style: normal;
+
+  color: var(--deen-gold);
+}
+
+
+/* =========================
+   HERO MOSQUE ART
+   ========================= */
+
+.islamic-hero-art {
+
+  position: absolute;
+
+  right: 90px;
+
+  bottom: 0;
+
+  width: 330px;
+
+  height: 210px;
+
+  pointer-events: none;
+}
+
+
+/* moon */
+
+.hero-moon {
+
+  position: absolute;
+
+  right: 100px;
+
+  top: 25px;
+
+  font-family: Georgia;
+
+  font-size: 78px;
+
+  color: var(--deen-gold-light);
+
+  transform: rotate(-15deg);
+
+  text-shadow:
+    0 0 35px
+    rgba(216,181,106,.25);
+}
+
+
+/* green glow */
+
+.hero-glow {
+
+  position: absolute;
+
+  width: 230px;
+
+  height: 100px;
+
+  bottom: 0;
+
+  left: 50px;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(32,184,115,.20),
+      transparent 70%
+    );
+
+  filter: blur(8px);
+}
+
+
+/* mosque */
+
+.hero-mosque {
+
+  position: absolute;
+
+  left: 25px;
+
+  bottom: 0;
+
+  width: 280px;
+
+  height: 110px;
+}
+
+
+/* dome */
+
+.dome {
+
+  position: absolute;
+
+  left: 95px;
+
+  top: 5px;
+
+  width: 90px;
+
+  height: 60px;
+
+  border-radius:
+    90px 90px 0 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #183f31,
+      #0b241a
+    );
+
+  border:
+    1px solid
+    rgba(216,181,106,.18);
+}
+
+.dome::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 4px;
+
+  height: 25px;
+
+  background: var(--deen-gold);
+
+  left: 43px;
+
+  top: -22px;
+}
+
+.dome::before {
+
+  content: "☾";
+
+  position: absolute;
+
+  left: 34px;
+
+  top: -37px;
+
+  font-family: Georgia;
+
+  font-size: 18px;
+
+  color: var(--deen-gold);
+}
+
+
+/* mosque body */
+
+.mosque-body {
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 40px;
+
+  width: 200px;
+
+  height: 65px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0c2119,
+      #133d2d,
+      #0b2118
+    );
+
+  border-top:
+    1px solid
+    rgba(216,181,106,.18);
+}
+
+
+/* arches */
+
+.mosque-body span {
+
+  display: inline-block;
+
+  width: 30px;
+
+  height: 43px;
+
+  margin: 15px 8px 0;
+
+  border-radius:
+    20px 20px 0 0;
+
+  border:
+    1px solid
+    rgba(216,181,106,.15);
+
+  background:
+    rgba(4,12,9,.45);
+}
+
+
+/* minarets */
+
+.minaret {
+
+  position: absolute;
+
+  bottom: 0;
+
+  width: 16px;
+
+  height: 105px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0b241a,
+      #174936,
+      #0b241a
+    );
+
+  border:
+    1px solid
+    rgba(216,181,106,.13);
+}
+
+.minaret::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: -12px;
+
+  left: -5px;
+
+  width: 24px;
+
+  height: 13px;
+
+  background: #174936;
+
+  border-radius: 50% 50% 0 0;
+}
+
+.minaret::after {
+
+  content: "◆";
+
+  position: absolute;
+
+  top: -27px;
+
+  left: 1px;
+
+  color: var(--deen-gold);
+
+  font-size: 9px;
+}
+
+.minaret.left {
+  left: 20px;
+}
+
+.minaret.right {
+  right: 20px;
+}
+
+
+/* =========================
+   CARDS
+   ========================= */
+
+.card,
+.metric {
+
+  border-color:
+    rgba(216,181,106,.10);
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(16,23,33,.98),
+      rgba(8,15,20,.98)
+    );
+}
+
+
+/* Islamic corner ornament */
+
+.card::after,
+.metric::after {
+
+  content: "✦";
+
+  position: absolute;
+
+  right: -12px;
+
+  bottom: -28px;
+
+  font-size: 85px;
+
+  color:
+    rgba(216,181,106,.035);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   AMANAH ACCOUNT
+   ========================= */
+
+.amanah-account {
+
+  border-color:
+    rgba(216,181,106,.22);
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(32,184,115,.10),
+      rgba(216,181,106,.04)
+    );
+}
+
+.amanah-icon {
+
+  width: 28px;
+
+  height: 28px;
+
+  border-radius: 8px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  background:
+    rgba(216,181,106,.08);
+
+  border:
+    1px solid
+    rgba(216,181,106,.22);
+
+  color: var(--deen-gold);
+
+  font-family: Georgia;
+
+  font-size: 17px;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.fund {
+
+  background:
+    linear-gradient(
+      135deg,
+      #32d98a,
+      #159e65
+    ) !important;
+
+  box-shadow:
+    0 8px 25px
+    rgba(32,184,115,.12);
+}
+
+
+/* =========================
+   ACTIVE NAV
+   ========================= */
+
+.nav button.active {
+
+  color: var(--deen-emerald);
+
+  box-shadow:
+    inset 2px 0 var(--deen-gold);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(32,184,115,.10),
+      transparent
+    );
+}
+
+
+/* =========================
+   SHARIAH BADGES
+   ========================= */
+
+.shariah-badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  color: var(--deen-gold);
+
+  border:
+    1px solid
+    rgba(216,181,106,.20);
+
+  background:
+    rgba(216,181,106,.04);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: .08em;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 900px) {
+
+  .islamic-hero-art {
+    opacity: .28;
+    right: -80px;
+  }
+
+  .islamic-welcome h1 {
+    font-size: 28px !important;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .islamic-welcome {
+
+    padding: 20px;
+
+    min-height: 250px;
+  }
+
+  .islamic-hero-art {
+
+    right: -120px;
+
+    opacity: .18;
+
+    transform: scale(.8);
+  }
+
+  .islamic-principles {
+
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .brand {
+
+    min-width: auto;
+  }
+
+  .brand-copy b {
+
+    font-size: 13px;
+  }
+
+  .brand-copy span {
+
+    font-size: 7px;
+  }
+
+}
